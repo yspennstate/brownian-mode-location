@@ -1,0 +1,271 @@
+\documentclass[11pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,enumitem}
+\usepackage[margin=1.1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+
+\newcommand{\E}{\mathbb E}
+\newcommand{\Pp}{\mathbb P}
+\newcommand{\R}{\mathbb R}
+
+\hypersetup{pdftitle={The mode of classical and free Brownian motion at large time},pdfauthor={Yitzchak Shmalo}}
+
+\title{The mode of classical and free Brownian motion at large time}
+\author{Yitzchak Shmalo}
+\address{Einstein Institute of Mathematics, The Hebrew University of Jerusalem, Jerusalem, Israel}
+\email{yitzchak.shmalo@gmail.com}
+\date{5 November 2026}
+\subjclass[2020]{60E05, 46L54, 60J65}
+\keywords{unimodality, mode, Brownian motion, free Brownian motion, semicircle distribution, free convolution}
+
+\begin{document}
+\begin{abstract}
+Let $\mu$ be a probability measure on $\R$ with $\int e^{\varepsilon x^2}\,d\mu(x)<\infty$ for some $\varepsilon>0$. Hasebe and Ueda proved that $\mu*N(0,t)$ is unimodal for large $t$ and asked where its mode is, and the same question for free Brownian motion $\mu\boxplus S(0,t)$. We show that for large $t$ both densities have a unique global maximum, that both maxima converge to the mean $m$ of $\mu$ at rate $1/t$ with explicit constants depending only on $\varepsilon$ and $\int e^{\varepsilon x^2}\,d\mu$, and that
+\[
+M_c(t)=m-\frac{\mu_3}{2t}+O(t^{-2}),\qquad M_f(t)=m-\frac{3\mu_3}{t}+O(t^{-2}),
+\]
+where $\mu_3$ is the third central moment; second-order terms are also computed. In the free case uniqueness of the global maximum needs only a finite variance.
+\end{abstract}
+\maketitle
+
+\section{Introduction}
+
+For a probability measure $\mu$ on $\R$ write $\mu_t^{c}=\mu*N(0,t)$ for the law at time $t$ of Brownian motion started from $\mu$, and $\mu_t^{f}=\mu\boxplus S(0,t)$ for the law at time $t$ of free Brownian motion started from $\mu$; here $S(0,t)$ is the semicircle law of variance $t$, so both noises have variance $t$. Hasebe and Ueda \cite{HU} proved that if
+\begin{equation}\label{eq:hyp}
+\alpha:=\int_\R e^{\varepsilon x^2}\,d\mu(x)<\infty\qquad\text{for some }\varepsilon>0,
+\end{equation}
+then $\mu_t^c$ is unimodal for $t\ge 36\log(2\alpha)/\varepsilon$, with its mode in $[-\sqrt t/2,\sqrt t/2]$. They also showed that no tail condition of this kind makes $\mu^f_t$ unimodal for large $t$ \cite[Theorem~1.2(2)]{HU}. They closed with the following question \cite[Problem~4.6]{HU}: estimate the position of the mode of classical Brownian motion with initial distribution satisfying \eqref{eq:hyp}, and the same for free Brownian motion.
+
+Since $\mu^f_t$ need not be unimodal, we take the mode to be the point where the density is largest, and we show that this point is unique for large $t$. Throughout, $X$ has law $\mu$, $m=\E X$, $v=\mu_2=\E(X-m)^2$, $\mu_k=\E(X-m)^k$ and $M_k=\E|X-m|^k$. Under \eqref{eq:hyp} all moments are finite. Put
+\[
+L=\frac{\log\alpha}{\varepsilon},\qquad Q=8\alpha\Bigl(\frac{3}{2e\varepsilon}\Bigr)^{3/2}.
+\]
+
+\begin{theorem}[classical]\label{thm:classical}
+Assume \eqref{eq:hyp}. For $t\ge 72\log(2\alpha^2)/\varepsilon$ the density of $\mu^c_t$ has a unique global maximizer $M_c(t)$, and
+\[
+|M_c(t)-m|\le\frac{M_3}{t}\le\frac{Q}{t}.
+\]
+Moreover, as $t\to\infty$,
+\[
+M_c(t)=m-\frac{\mu_3}{2t}+\frac{\mu_5-6\mu_2\mu_3}{8t^2}+O(t^{-3}).
+\]
+\end{theorem}
+
+\begin{theorem}[free]\label{thm:free}
+Assume only that $0<v<\infty$, and put $B=(2+\sqrt2)\sqrt v$ and $A=B^2+v=(7+4\sqrt2)v$. For $t>7A$ the density of $\mu^f_t$ has a unique global maximizer $M_f(t)$, and $M_f(t)\to m$ as $t\to\infty$. If $M_3<\infty$, then for $t>7A$
+\[
+|M_f(t)-m|\le\frac{64\,(B^3+M_3)}{t}.
+\]
+If $M_7<\infty$, then as $t\to\infty$
+\[
+M_f(t)=m-\frac{3\mu_3}{t}+\frac{5\mu_5-22\mu_2\mu_3}{t^2}+O(t^{-3}).
+\]
+Under \eqref{eq:hyp}, $|M_f(t)-m|\le 64\bigl((2+\sqrt2)^3L^{3/2}+Q\bigr)/t$ for $t>7(7+4\sqrt2)L$.
+\end{theorem}
+
+The constants in the $O(t^{-3})$ terms depend on $\mu$. If $v=0$ then $\mu=\delta_m$, the two laws are $N(m,t)$ and the semicircle law of variance $t$ centred at $m$, and both modes equal $m$ for every $t$. If $\mu$ is symmetric about $m$ then both densities are symmetric about $m$, and uniqueness forces $M_c(t)=M_f(t)=m$ for large $t$. When $\mu_3\ne0$ the order $1/t$ is attained in both cases, and the free mode moves six times as far as the classical one at first order. For example, if $\Pp(X=-1)=2/3$ and $\Pp(X=2)=1/3$ then $v=2$, $\mu_3=2$, and the leading shifts are $-1/t$ and $-6/t$.
+
+The answer to the first half of Problem~4.6 is therefore much sharper than the window $[-\sqrt t/2,\sqrt t/2]$: the mode sits within $O(1/t)$ of the mean. Section~\ref{sec:free} treats the free case through Biane's description of $\mu\boxplus S(0,t)$ \cite{Biane}; Section~\ref{sec:classical} treats the classical case; Section~\ref{sec:expansions} computes the expansions; Section~\ref{sec:constants} turns the moment bounds into bounds in $\varepsilon$ and $\alpha$.
+
+\section{The free case}\label{sec:free}
+
+We recall Biane's parametrization in the form used in \cite[(2.8)--(2.14)]{HU}. For $u\in\R$ and $R\ge0$ put
+\[
+F(u,R)=\E\Bigl[\frac{1}{R+(u-X)^2}\Bigr].
+\]
+Let $\eta_t(u)=\inf\{\eta\ge0:F(u,\eta^2)\le1/t\}$. Then $\eta_t$ is continuous, and on the open set where $\eta_t>0$ the number $R=\eta_t(u)^2$ is the unique solution of $F(u,R)=1/t$. The map
+\[
+\psi_t(u)=u+t\,\E\Bigl[\frac{u-X}{\eta_t(u)^2+(u-X)^2}\Bigr]
+\]
+is a homeomorphism of $\R$, and the density $p_t$ of $\mu\boxplus S(0,t)$ satisfies $p_t(\psi_t(u))=\eta_t(u)/(\pi t)$. So $p_t$ has a unique global maximizer if and only if $\eta_t$ does, and then $M_f(t)=\psi_t(u^*)$, where $u^*$ is the maximizer of $\eta_t$. Since $F(u,R)\le1/R$, every positive value satisfies $\eta_t(u)^2\le t$.
+
+\begin{theorem}\label{thm:freeglobal}
+Let $\E X=0$ and $\E X^2=v\in(0,\infty)$, and let $B$ and $A$ be as in Theorem~\ref{thm:free}. For $t>7A$, $\eta_t$ has a unique global maximizer $u^*$; it satisfies $|u^*|\le B$, and $R^*=\eta_t(u^*)^2$ satisfies $t-v\le R^*\le t$.
+\end{theorem}
+
+\begin{proof}
+By Jensen's inequality applied to the convex function $x\mapsto1/x$,
+\[
+F(0,t-v)\ge\frac{1}{t-v+\E X^2}=\frac1t,
+\]
+and $F(0,\cdot)$ is decreasing, so $\eta_t(0)^2\ge t-v>0$. For fixed $\delta>0$, $F(u,\delta^2)\to0$ as $|u|\to\infty$ by dominated convergence, so $\eta_t(u)<\delta$ for large $|u|$. Hence the continuous function $\eta_t$ attains a positive maximum. Let $u^*$ be any maximizer and $R^*=\eta_t(u^*)^2$; then $t-v\le R^*\le t$.
+
+\emph{Location.} Since $F(u^*,R^*)=1/t$,
+\[
+\E\Bigl[\frac{(u^*-X)^2}{R^*+(u^*-X)^2}\Bigr]=1-\frac{R^*}{t}\le\frac vt.
+\]
+By Chebyshev's inequality $\Pp(|X|\le\sqrt{2v})\ge1/2$. If $|u^*|>\sqrt{2v}$, put $a=|u^*|-\sqrt{2v}$. Then $|u^*-X|\ge a$ on that event, the function $z\mapsto z/(R^*+z)$ is increasing, and $R^*\le t$, so
+\[
+\frac{a^2}{2(t+a^2)}\le\frac vt.
+\]
+For $t\ge4v$ this gives $a^2\le 2vt/(t-2v)\le4v$, so $|u^*|\le\sqrt{2v}+2\sqrt v=B$.
+
+\emph{Concavity.} Fix $R>0$. Differentiating under the expectation, which is allowed because the integrands are bounded rational functions of $u-X$,
+\[
+\partial_u^2F(u,R)=-2\,\E\Bigl[\frac{R-3(u-X)^2}{(R+(u-X)^2)^3}\Bigr].
+\]
+For $z\ge0$ one has the identity
+\begin{equation}\label{eq:identity}
+\frac{1-3z}{(1+z)^3}-(1-6z)=\frac{z^2(15+17z+6z^2)}{(1+z)^3}\ge0.
+\end{equation}
+With $z=(u-X)^2/R$ this gives
+\[
+\E\Bigl[\frac{R-3(u-X)^2}{(R+(u-X)^2)^3}\Bigr]\ge\frac{1}{R^2}\Bigl(1-\frac{6\,\E(u-X)^2}{R}\Bigr)=\frac{1}{R^2}\Bigl(1-\frac{6(u^2+v)}{R}\Bigr).
+\]
+For $|u|\le B$ we have $u^2+v\le A$. If $t>7A$ then $R^*\ge t-v>6A$, so $u\mapsto F(u,R^*)$ is strictly concave on $[-B,B]$.
+
+\emph{Uniqueness.} Let $u$ be arbitrary. If $\eta_t(u)>0$ then $F(u,\eta_t(u)^2)=1/t$ and $\eta_t(u)^2\le R^*$, so $F(u,R^*)\le1/t$ because $F(u,\cdot)$ is decreasing. If $\eta_t(u)=0$ then $F(u,R)\le1/t$ for every $R>0$, in particular for $R=R^*$. Hence every global maximizer of $\eta_t$ is a maximizer of $F(\cdot,R^*)$, with value $1/t$. All of them lie in $[-B,B]$, where $F(\cdot,R^*)$ is strictly concave, so there is only one.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:free}]
+Translating by $m$ we may assume $m=0$. Theorem~\ref{thm:freeglobal} gives the unique global maximizer $M_f(t)=\psi_t(u^*)$. Write $q=u^*-X$ and $R=R^*$. Since $\eta_t$ is maximal at $u^*$ and $u^*$ lies in the open set $\{\eta_t>0\}$, implicit differentiation of $F(u,\eta_t(u)^2)=1/t$ (note $\partial_RF<0$) gives $\partial_uF(u^*,R)=0$, that is,
+\begin{equation}\label{eq:stat}
+\E\Bigl[\frac{q}{(1+q^2/R)^2}\Bigr]=0.
+\end{equation}
+Also, since $t/(R+q^2)=(t/R)/(1+q^2/R)$,
+\begin{equation}\label{eq:mode}
+M_f(t)=u^*+\frac tR\,\E\Bigl[\frac{q}{1+q^2/R}\Bigr].
+\end{equation}
+
+\emph{Convergence.} We have $|u^*|\le B$, $R\ge t-v\to\infty$ and $|q|\le B+|X|$. Along any sequence $t_n\to\infty$ with $u^*(t_n)\to u_0$, dominated convergence in \eqref{eq:stat} gives $\E(u_0-X)=0$, so $u_0=0$. Hence $u^*\to0$, and \eqref{eq:mode} with $t/R\to1$ and dominated convergence gives $M_f(t)\to\E q\to0$.
+
+\emph{Rate.} Assume $M_3<\infty$. Then $\E|q|^3\le4(|u^*|^3+M_3)\le4(B^3+M_3)=:D$. With $z=q^2/R$, \eqref{eq:stat} says $u^*=\E q=\E[q(1-(1+z)^{-2})]$, and $0\le1-(1+z)^{-2}\le2z$, so $|u^*|\le2D/R$. Next, $\E[q/(1+z)]=u^*-\E[q^3/(R+q^2)]$, and the last expectation is at most $D/R$ in absolute value. By \eqref{eq:mode},
+\[
+|M_f(t)|\le\frac{2D}{R}+\frac{3tD}{R^2}.
+\]
+Since $t>7A>2v$ we have $R\ge t-v\ge t/2$, and therefore $|M_f(t)|\le 4D/t+12D/t=64(B^3+M_3)/t$.
+
+The expansion is proved in Proposition~\ref{prop:free}, and the bound in terms of $\varepsilon$ and $\alpha$ in Section~\ref{sec:constants}.
+\end{proof}
+
+\section{The classical case}\label{sec:classical}
+
+\begin{theorem}\label{thm:classicalbound}
+Let $Y=X-m$, $\delta=\varepsilon/2$, $\alpha_c=\E e^{\delta Y^2}$ and $T_c=36\log(2\alpha_c)/\delta$. If $v>0$ then for $t\ge T_c$ the density of $\mu^c_t$ has a unique global maximizer $M_c(t)$, and $|M_c(t)-m|\le M_3/t$.
+\end{theorem}
+
+\begin{proof}
+Since $(a-b)^2\le2a^2+2b^2$, $\alpha_c\le e^{\varepsilon m^2}\alpha<\infty$, so the law of $Y$ satisfies \eqref{eq:hyp} with $\delta$ and $\alpha_c$. By \cite[Theorem~4.3 and (4.32)]{HU} applied to $Y$, for $t\ge T_c$ the density $f_t$ of $\mathrm{law}(Y)*N(0,t)$ is increasing on $(-\infty,-\sqrt t/2]$, decreasing on $[\sqrt t/2,\infty)$ and strictly concave on $(-\sqrt t/2,\sqrt t/2)$. So $f_t$ has a unique global maximizer $h_t\in(-\sqrt t/2,\sqrt t/2)$, and $M_c(t)=m+h_t$. It remains to bound $h_t$.
+
+Put $s=1/t$ and $H(h)=\E[(Y-h)e^{-s(Y-h)^2/2}]$, so that $f_t'(h)$ has the sign of $H(h)$ and $H(h_t)=0$. For $z\ge0$,
+\begin{equation}\label{eq:exp}
+(1-z)e^{-z/2}\ge1-\tfrac32z.
+\end{equation}
+For $z\le1$ this follows from $e^{-z/2}\ge1-z/2$, since $(1-z)(1-z/2)\ge1-\tfrac32z$; for $z\ge1$ the left side is at least $1-z\ge1-\tfrac32z$. Differentiating under the expectation and applying \eqref{eq:exp} with $z=s(Y-h)^2$,
+\[
+-H'(h)=\E\bigl[(1-s(Y-h)^2)e^{-s(Y-h)^2/2}\bigr]\ge1-\tfrac32s(v+h^2).
+\]
+By Jensen's inequality $\log\alpha_c\ge\delta v$, so $T_c\ge36v$. For $|h|\le\sqrt t/2$ and $t\ge T_c$ this gives $-H'(h)\ge 1-\tfrac38-\tfrac1{24}=\tfrac7{12}>\tfrac12$. Since $\E Y=0$ and $|1-e^{-x}|\le x$ for $x\ge0$,
+\[
+|H(0)|=\bigl|\E\bigl[Y(e^{-sY^2/2}-1)\bigr]\bigr|\le\tfrac s2M_3.
+\]
+Integrating $H'$ between $0$ and $h_t$ gives $|h_t|\le2|H(0)|\le M_3/t$.
+\end{proof}
+
+\section{Expansions}\label{sec:expansions}
+
+Both expansions come from Taylor expansion of the stationarity equations with explicit remainders. We assume $m=0$, so $\mu_k=\E X^k$, and write $s=1/t$.
+
+\begin{proposition}\label{prop:classical}
+If $M_7<\infty$ and the classical mode $h_t$ is unique with $h_t=O(s)$, then $h_t=-\mu_3s/2+(\mu_5-6\mu_2\mu_3)s^2/8+O(s^3)$.
+\end{proposition}
+
+\begin{proof}
+By Taylor's theorem, $e^{-x}=1-x+x^2/2+\rho$ with $|\rho|\le x^3/6$ for $x\ge0$. With $q=X-h_t$ and $x=sq^2/2$, the equation $H(h_t)=0$ reads
+\[
+0=\E q-\tfrac s2\E q^3+\tfrac{s^2}{8}\E q^5+O(s^3\E|q|^7),
+\]
+and $\E|q|^7$ is bounded because $h_t$ is. Now $\E q=-h_t$, $\E q^3=\mu_3-3\mu_2h_t-h_t^3$ and $\E q^5=\mu_5+O(s)$. The equation becomes $h_t(1-\tfrac32\mu_2s)=-\tfrac12\mu_3s+\tfrac18\mu_5s^2+O(s^3)$. This gives first $h_t=-\mu_3s/2+O(s^2)$ and then the stated second term.
+\end{proof}
+
+Under \eqref{eq:hyp}, Theorem~\ref{thm:classicalbound} supplies the hypotheses of Proposition~\ref{prop:classical}, which completes the proof of Theorem~\ref{thm:classical} once the threshold is expressed through $\alpha$ (Section~\ref{sec:constants}).
+
+\begin{proposition}\label{prop:free}
+If $0<v$ and $M_7<\infty$, then the free maximizer satisfies $u^*=-2\mu_3s+(3\mu_5-14\mu_2\mu_3)s^2+O(s^3)$ and $M_f(t)=-3\mu_3s+(5\mu_5-22\mu_2\mu_3)s^2+O(s^3)$.
+\end{proposition}
+
+\begin{proof}
+Let $r=R^*/t$ and $q=u^*-X$. By Theorems~\ref{thm:freeglobal} and~\ref{thm:free}, $1-vs\le r\le1$ and $u^*=O(s)$, so the moments $\E|q|^k$, $k\le7$, are bounded. The defining equations become
+\[
+\E\bigl[(r+sq^2)^{-1}\bigr]=1,\qquad \E\bigl[q(r+sq^2)^{-2}\bigr]=0,\qquad M_f=u^*+\E\bigl[q(r+sq^2)^{-1}\bigr].
+\]
+For $z\ge0$,
+\[
+(1+z)^{-1}=1-z+z^2+\rho_1,\quad|\rho_1|\le z^3,\qquad (1+z)^{-2}=1-2z+3z^2+\rho_2,\quad|\rho_2|\le4z^3;
+\]
+the first remainder is exactly $-z^3/(1+z)$, and the second follows from the integral form of Taylor's remainder, since the third derivative of $(1+z)^{-2}$ is $-24(1+z)^{-5}$. We apply these with $z=sq^2/r$.
+
+The first equation, multiplied by $r$, gives $r=1-(s/r)\E q^2+(s^2/r^2)\E q^4+O(s^3)$. Since $\E q^2=v+(u^*)^2=v+O(s^2)$, this yields $r=1-vs+O(s^2)$, hence $1/r=1+vs+O(s^2)$.
+
+The second equation, multiplied by $r^2$, gives
+\[
+0=u^*-\frac{2s}{r}\E q^3+\frac{3s^2}{r^2}\E q^5+O(s^3).
+\]
+Here $\E q^3=(u^*)^3+3vu^*-\mu_3$ and $\E q^5=-\mu_5+O(s)$, so
+\[
+0=u^*+2\mu_3s+2v\mu_3s^2-6vu^*s-3\mu_5s^2+O(s^3).
+\]
+Thus $u^*=-2\mu_3s+O(s^2)$, and then $u^*=-2\mu_3s+(3\mu_5-14v\mu_3)s^2+O(s^3)$.
+
+Finally, expanding the third expression in the same way,
+\[
+M_f=u^*+\frac{u^*}{r}-\frac{s}{r^2}\E q^3+\frac{s^2}{r^3}\E q^5+O(s^3)=2u^*-2vu^*s+\mu_3s+(2v\mu_3-\mu_5)s^2+O(s^3),
+\]
+and substituting $u^*$ gives the claim.
+\end{proof}
+
+\section{Constants in terms of \texorpdfstring{$\varepsilon$}{epsilon} and \texorpdfstring{$\alpha$}{alpha}}\label{sec:constants}
+
+Assume \eqref{eq:hyp}. If $\alpha=1$ then $X=0$ almost surely and there is nothing to prove, so let $\alpha>1$. By Jensen's inequality $\varepsilon\,\E X^2\le\log\alpha$, so
+\[
+v\le\E X^2\le L,\qquad e^{\varepsilon m^2}\le\alpha.
+\]
+Hence $\alpha_c\le\alpha^2$ in Theorem~\ref{thm:classicalbound}, and its threshold satisfies $T_c=72\log(2\alpha_c)/\varepsilon\le72\log(2\alpha^2)/\varepsilon$. For $k>0$ the function $a\mapsto a^ke^{-\varepsilon a^2}$ on $[0,\infty)$ is maximal at $a=\sqrt{k/(2\varepsilon)}$, so
+\[
+\E|X|^k\le\alpha\Bigl(\frac{k}{2e\varepsilon}\Bigr)^{k/2}.
+\]
+With $|a-b|^3\le4(|a|^3+|b|^3)$ and $|m|^3\le\E|X|^3$ this gives $M_3\le8\,\E|X|^3\le Q$. This proves the bound in Theorem~\ref{thm:classical}. In Theorem~\ref{thm:free} we have $B^3\le(2+\sqrt2)^3L^{3/2}$ and $7A\le7(7+4\sqrt2)L$, which gives the last statement there. None of these constants is claimed to be optimal.
+
+\section{Computations}\label{sec:numerics}
+
+The program \texttt{code/checks.py} in the repository computes both modes for four finitely supported laws by a grid search for the global maximum followed by Newton's method, at forty-digit precision. For the free mode it uses the parametrization of Section~\ref{sec:free}. For $t=100,200,400,800,1600$ the scaled errors $t^3(M-\text{expansion})$ stay bounded for both models; for the two-point law of the introduction they are about $-2.38$ and $-137$. The program also checks the bounds of Theorems~\ref{thm:free} and~\ref{thm:classicalbound} above their thresholds, and checks that the free density has a single local maximum above $t=7A$. For the law with atoms $0,1,12$ and weights $0.8,0.19,0.01$ the free scaled error grows from about $-6.9\times10^{5}$ at $t=100$ to $-1.6\times10^{6}$ at $t=1600$ with shrinking increments; its large higher central moments make the third-order term dominant over this range. At every computed time all four densities have a single local maximum on the grid. The file \texttt{lean/Algebra.lean} verifies the identity \eqref{eq:identity} and the coefficient arithmetic of Proposition~\ref{prop:free} in Lean~4 with Mathlib.
+
+\section*{Acknowledgements and funding}
+The research presented in this paper was supported by the European Research
+Council (ERC) under the European Union's Horizon Europe research and
+innovation programme (grant agreement No.~101041711), by the Simons
+Foundation as part of the Collaboration on the Mathematical and Scientific
+Foundations of Deep Learning, by Heights Labs, by Convex Nexus Capital, by
+the Israel Science Foundation (grant number 2258/19), and by the Israel
+Science Foundation (ISF Grant 4101/25). Computational resources were
+provided in part by Google Cloud through its education credits program
+(credit 530550103).
+
+\section*{Declaration of competing interest}
+The author holds equity in Heights Labs and in Convex Nexus Capital and
+has a management role at Convex Nexus Capital. These entities are included
+in the funding declaration above.
+
+\section*{Declaration of generative AI and AI-assisted technologies}
+The paper comes out of Math Brain, an ongoing project on the use of AI systems for research mathematics. In October 2026 OpenAI GPT models, running as research tasks of that project, produced the proofs of Theorems~\ref{thm:freeglobal} and~\ref{thm:classicalbound}, the two expansions and the constants of Section~\ref{sec:constants}, together with numerical checks and the Lean file. In October and November 2026 Claude Opus~5.5 (Anthropic), working in Claude Code, checked the proofs and the expansions, wrote the verification program and wrote the paper. The author directed the work and is responsible for the content of the paper and for decisions concerning its dissemination.
+
+\section*{Data availability}
+No data were used. The code is available at\\ \url{https://github.com/yspennstate/brownian-mode-location}.
+
+\begin{thebibliography}{10}
+\bibitem{Biane} P.~Biane, \emph{On the free convolution with a semi-circular distribution}, Indiana Univ. Math. J. \textbf{46} (1997), 705--718.
+\bibitem{HU} T.~Hasebe and Y.~Ueda, \emph{Large time unimodality for classical and free Brownian motions with initial distributions}, ALEA Lat. Am. J. Probab. Math. Stat. \textbf{15} (2018), 353--374.
+\end{thebibliography}
+\end{document}
