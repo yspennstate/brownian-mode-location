@@ -45,7 +45,7 @@ For a probability measure $\mu$ on $\R$ write $\mu_t^{c}=\mu*N(0,t)$ for the law
 \begin{equation}\label{eq:hyp}
 \alpha:=\int_\R e^{\varepsilon x^2}\,d\mu(x)<\infty\qquad\text{for some }\varepsilon>0,
 \end{equation}
-then $\mu_t^c$ is unimodal for $t\ge 36\log(2\alpha)/\varepsilon$, with its mode in $[-\sqrt t/2,\sqrt t/2]$. They also showed that no tail condition of this kind makes $\mu^f_t$ unimodal for large $t$ \cite[Theorem~1.2(2)]{HU}. They closed with the following question \cite[Problem~4.6]{HU}: estimate the position of the mode of classical Brownian motion with initial distribution satisfying \eqref{eq:hyp}, and the same for free Brownian motion.
+then $\mu_t^c$ is unimodal for $t\ge 36\log(2\alpha)/\varepsilon$, with its mode in $[-\sqrt t/2,\sqrt t/2]$. For unimodal $\mu$ the law $\mu_t^c$ is unimodal for every $t$, because the Gaussian is strongly unimodal in the sense of Ibragimov \cite{Ibr}; the hypothesis \eqref{eq:hyp} does not ask $\mu$ to be unimodal. They also showed that no tail condition of this kind makes $\mu^f_t$ unimodal for large $t$ \cite[Theorem~1.2(2)]{HU}. Unimodality in free probability is studied for freely selfdecomposable laws by Hasebe and Thorbj\o rnsen \cite{HT}, for free L\'evy processes by Hasebe and Sakuma \cite{HS}, and, as log-unimodality, for free positive multiplicative Brownian motion by Hasebe, Ueda and Wang \cite{HUW}. They closed with the following question \cite[Problem~4.6]{HU}: estimate the position of the mode of classical Brownian motion with initial distribution satisfying \eqref{eq:hyp}, and the same for free Brownian motion.
 
 Since $\mu^f_t$ need not be unimodal, we take the mode to be the point where the density is largest, and we show that this point is unique for large $t$. Throughout, $X$ has law $\mu$, $m=\E X$, $v=\mu_2=\E(X-m)^2$, $\mu_k=\E(X-m)^k$ and $M_k=\E|X-m|^k$. Under \eqref{eq:hyp} all moments are finite. Put
 \[
@@ -271,7 +271,11 @@ The paper is part of the Math Brain project, whose public repository is \url{htt
 \begin{thebibliography}{10}
 \bibitem{Biane} P.~Biane, \emph{On the free convolution with a semi-circular distribution}, Indiana Univ. Math. J. \textbf{46} (1997), 705--718.
 \bibitem{Haldane} J.~B.~S.~Haldane, \emph{The mode and median of a nearly normal distribution with given cumulants}, Biometrika \textbf{32} (1942), no.~3--4, 294, doi:10.2307/2332132.
+\bibitem{HS} T.~Hasebe and N.~Sakuma, \emph{Unimodality for free L\'evy processes}, Ann. Inst. Henri Poincar\'e Probab. Stat. \textbf{53} (2017), 916--936.
+\bibitem{HT} T.~Hasebe and S.~Thorbj\o rnsen, \emph{Unimodality of the freely selfdecomposable probability laws}, J. Theoret. Probab. \textbf{29} (2016), 922--940.
 \bibitem{HU} T.~Hasebe and Y.~Ueda, \emph{Large time unimodality for classical and free Brownian motions with initial distributions}, ALEA Lat. Am. J. Probab. Math. Stat. \textbf{15} (2018), 353--374.
+\bibitem{HUW} T.~Hasebe, Y.~Ueda and J.-C.~Wang, \emph{Log-unimodality for free positive multiplicative Brownian motion}, Colloq. Math. \textbf{169} (2022), 209--226.
+\bibitem{Ibr} I.~A.~Ibragimov, \emph{On the composition of unimodal distributions}, Theory Probab. Appl. \textbf{1} (1956), 255--260.
 \bibitem{MathBrainRepo} Y.~Shmalo, \emph{Math Brain: public snapshot, code and tests}, 2026, \url{https://github.com/yspennstate/math-brain-public}.
 
 \bibitem{MathBrainPaper} Y.~Shmalo, \emph{Math Brain: shared, auditable memory for multi-agent mathematical research}, October 2026, \url{https://github.com/yspennstate/math-brain-public/tree/main/papers/math-brain-2026-10-24}.
